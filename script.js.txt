@@ -1,0 +1,28 @@
+function startAssessment() {
+  document.getElementById('form-container').style.display = 'block';
+}
+
+function generateSummary() {
+  const bewusstsein = document.getElementById('bewusstsein').value;
+  const orientierung = [];
+  if (document.getElementById('zeit').checked) orientierung.push("zur Zeit");
+  if (document.getElementById('ort').checked) orientierung.push("zum Ort");
+  if (document.getElementById('person').checked) orientierung.push("zur Person");
+  const stimmung = document.getElementById('stimmung').value;
+
+  let text = `Bewusstsein: ${bewusstsein || 'nicht angegeben'}\n`;
+  text += `Orientierung: ${orientierung.length > 0 ? orientierung.join(", ") : 'nicht orientiert'}\n`;
+  text += `Stimmung: ${stimmung || 'nicht angegeben'}\n`;
+
+  document.getElementById('output').value = text;
+  document.getElementById('summary').style.display = 'block';
+}
+
+function downloadText() {
+  const text = document.getElementById('output').value;
+  const blob = new Blob([text], { type: "text/plain" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "psychobefund.txt";
+  link.click();
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Psychopathologischer Befund Assistent</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Psychopathologischer Befund Assistent</h1>
+    <button onclick="startAssessment()">Befund erstellen</button>
+  </header>
+
+  <main id="form-container" style="display:none;">
+    <section>
+      <h2>Bewusstsein</h2>
+      <select id="bewusstsein">
+        <option value="">Auswählen</option>
+        <option value="klar">Klar</option>
+        <option value="getrübt">Getrübt</option>
+        <option value="bewusstseinsstörung">Bewusstseinsstörung</option>
+      </select>
+    </section>
+
+    <section>
+      <h2>Orientierung</h2>
+      <input type="checkbox" id="zeit" /> <label for="zeit">Zur Zeit</label>
+      <input type="checkbox" id="ort" /> <label for="ort">Zum Ort</label>
+      <input type="checkbox" id="person" /> <label for="person">Zur Person</label>
+    </section>
+
+    <section>
+      <h2>Stimmung</h2>
+      <select id="stimmung">
+        <option value="">Auswählen</option>
+        <option value="depressiv">Depressiv</option>
+        <option value="ängstlich">Ängstlich</option>
+        <option value="euphorisch">Euphorisch</option>
+      </select>
+    </section>
+
+    <button onclick="generateSummary()">Befund generieren</button>
+  </main>
+
+  <section id="summary" style="display:none;">
+    <h2>Zusammenfassung</h2>
+    <textarea id="output" rows="10" cols="80"></textarea><br>
+    <button onclick="downloadText()">Als Text herunterladen</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

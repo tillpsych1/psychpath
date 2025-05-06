@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  background-color: #f9f9ff;
+  margin: 2rem;
+  color: #333;
+}
+
+h1, h2 {
+  color: #336699;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background-color: #336699;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2a557d;
+}
